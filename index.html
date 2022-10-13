@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem Oculta</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <script src="./js/script.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <img src="./images/logomo.png">
+        <nav>
+            <ul>
+                <li id="sobreoprojeto" onclick="mostrarInfo ()">SOBRE O PROJETO</li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <div class="camposdeinformacoes">
+            <label for="entradadetexto" class="titulo">Insira o seu texto aqui:</label>
+            <input type="text" name="entradadetexto" class="caixadetexto" id="entradatxt" required>
+
+            <p class="titulo">Selecione a tipo de codificação/decodificação:</p>
+            <input type="radio" id="base64" name="base64oucifra" value="base64" checked>
+            <label for="base64">base64</label>
+            <input type="radio" id="cifra" name="base64oucifra" value="cifradecesar">
+            <label for="cifradecesar">Cifra de César</label>
+
+            <div id="incremento">
+                <label class="titulo" for="incremento">Incremento:</label>
+                <input type="number" class="caixadetexto" id="incremento1" value="1" name="incremento">
+            </div>
+
+
+            <p class="titulo">Selecione a ação:</p>
+            <input type="radio" id="codificar" name="codidecodi" value="codificar" onclick="alteraBotao ()" checked>
+            <label for="codificar">Codificar</label>
+
+            <input type="radio" id="decodificar" name="codidecodi" value="decodificar" onclick="alteraBotao ()">
+            <label for="decodificar">Decodificar</label>
+
+            <p class="titulo"> Mensagem codificada/decodificada: </p>
+            <textarea id="txtcodificado"></textarea>
+
+            <div class="pbotoes">
+                <button class="botao" id="botaocod" onclick="codeOrDecode ()">CODIFICAR MENSAGEM!</button>
+                <button class="botao transc" id="botaotransc" onclick="transcreverTxt ()">TRANSCREVER!</button>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <p>Criado por: Paloma Avelino </p>
+        <div class="icon">
+        <img src="./images/linkedin.png" id="imglinkedin">
+        <img src="./images/github.png" id="imggithub">
+    </div>
+    </footer>
+
+    <div class="modal-container" id="modal" >
+    <div class="modal">
+        <h2>SOBRE O PROJETO</h2>
+
+        <p>O projeto intitulado <span>Mensagem Oculta</span> é uma proposta do curso de Desenvolvimento Web Full-Stack
+            do programa <span>Programadores Cariocas</span>, realizado através dada parceria <span>Resília Educação -
+            Prefeitura do Rio de Janeiro - Senac RJ</span>. Ele foi desenvolvido com a finalidade de codificar e decodificar
+            informações na base64 e em Cifra de César. Basta inserir o texto, selecionar a codifição/decodificação
+            desejada e clicar no botão codificar/decodificar. </p>
+    
+        <button class="botao" id="botaofechar">FECHAR</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
