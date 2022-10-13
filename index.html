@@ -26,13 +26,13 @@
     <main class="container">
         <div class="camposdeinformacoes">
             <label for="entradadetexto" class="titulo">Insira o seu texto aqui:</label>
-            <input type="text" name="entradadetexto" class="caixadetexto" id="entradatxt" required>
+            <input type="text" name="entradadetexto" class="caixadetexto" id="entradatxt">
 
-            <p class="titulo">Selecione a tipo de codificação/decodificação:</p>
+            <span class="titulo">Selecione a tipo de codificação/decodificação:</span>
             <input type="radio" id="base64" name="base64oucifra" value="base64" checked>
-            <label for="base64">base64</label>
+            <label for="base64" class="radio">base64</label>
             <input type="radio" id="cifra" name="base64oucifra" value="cifradecesar">
-            <label for="cifradecesar">Cifra de César</label>
+            <label for="cifradecesar" class="radio">Cifra de César</label>
 
             <div id="incremento">
                 <label class="titulo" for="incremento">Incremento:</label>
@@ -40,14 +40,14 @@
             </div>
 
 
-            <p class="titulo">Selecione a ação:</p>
+            <span class="titulo">Selecione a ação:</span>
             <input type="radio" id="codificar" name="codidecodi" value="codificar" onclick="alteraBotao ()" checked>
-            <label for="codificar">Codificar</label>
+            <label for="codificar" class="radio">Codificar</label>
 
             <input type="radio" id="decodificar" name="codidecodi" value="decodificar" onclick="alteraBotao ()">
-            <label for="decodificar">Decodificar</label>
+            <label for="decodificar" class="radio">Decodificar</label>
 
-            <p class="titulo"> Mensagem codificada/decodificada: </p>
+            <span class="titulo"> Mensagem codificada/decodificada: </span>
             <textarea id="txtcodificado"></textarea>
 
             <div class="pbotoes">
@@ -60,22 +60,25 @@
     <footer>
         <p>Criado por: Paloma Avelino </p>
         <div class="icon">
-        <img src="./images/linkedin.png" id="imglinkedin">
-        <img src="./images/github.png" id="imggithub">
-    </div>
+            <img src="./images/linkedin.png" id="imglinkedin">
+            <img src="./images/github.png" id="imggithub">
+        </div>
     </footer>
 
-    <div class="modal-container" id="modal" >
-    <div class="modal">
-        <h2>SOBRE O PROJETO</h2>
+    <div class="modal-container" id="modal">
+        <div class="modal">
+            <h2>SOBRE O PROJETO</h2>
 
-        <p>O projeto intitulado <span>Mensagem Oculta</span> é uma proposta do curso de Desenvolvimento Web Full-Stack
-            do programa <span>Programadores Cariocas</span>, realizado através dada parceria <span>Resília Educação -
-            Prefeitura do Rio de Janeiro - Senac RJ</span>. Ele foi desenvolvido com a finalidade de codificar e decodificar
-            informações na base64 e em Cifra de César. Basta inserir o texto, selecionar a codifição/decodificação
-            desejada e clicar no botão codificar/decodificar. </p>
-    
-        <button class="botao" id="botaofechar">FECHAR</button>
+            <p>O projeto intitulado <span>Mensagem Oculta</span> é uma proposta do curso de Desenvolvimento Web
+                Full-Stack
+                do programa <span>Programadores Cariocas</span>, realizado através dada parceria <span>Resília Educação
+                    -
+                    Prefeitura do Rio de Janeiro - Senac RJ</span>. Ele foi desenvolvido com a finalidade de codificar e
+                decodificar
+                informações na base64 e em Cifra de César. Basta inserir o texto, selecionar a codifição/decodificação
+                desejada e clicar no botão codificar/decodificar. </p>
+
+            <button class="botao" id="botaofechar">FECHAR</button>
         </div>
     </div>
 

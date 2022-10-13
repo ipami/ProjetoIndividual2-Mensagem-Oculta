@@ -74,72 +74,72 @@ function codeOrDecode() {
     const verificacao = /\W|_/;
 
 
-    if (entrada != ''){
-/*base 64 */
+    if (entrada != '') {
+        /*base 64 */
 
-    if (base64.checked) {
-        if (code.checked) {
-            codeBase64 = btoa(txtEntrada.value)
-            saidaTxt.value = codeBase64
-        } else {
-            decodeBase64 = atob(txtEntrada.value)
-            saidaTxt.value = decodeBase64
-        }
-
-/*cifra*/
-
-    } else if (cifra.checked) {
-
-        var codeCifra = '';
-
-        if (code.checked) {
-
-            for (var i = 0; i < stringSplit.length; i++) {
-                if (stringSplit[i] == ' ') {
-                    codeCifra += ' ';
-                } else if (verificacao.test(stringSplit[i]) == true) {
-                    codeCifra += stringSplit[i];
-                } else if (stringSplit[i] == stringSplit[i].toLowerCase()) {
-                    var char = stringSplit[i].toUpperCase().charCodeAt(0);
-                    var conversao = ((char - 65 + parseInt(valorIncremento.value)) % 26 + 65);
-                    codeCifra += String.fromCharCode(conversao).toLowerCase();
-
-                } else {
-                    var char = stringSplit[i].charCodeAt(0);
-                    var conversao = ((char - 65 + parseInt(valorIncremento.value)) % 26 + 65);;
-                    codeCifra += String.fromCharCode(conversao);
-                }
+        if (base64.checked) {
+            if (code.checked) {
+                codeBase64 = btoa(txtEntrada.value)
+                saidaTxt.value = codeBase64
+            } else {
+                decodeBase64 = atob(txtEntrada.value)
+                saidaTxt.value = decodeBase64
             }
-            saidaTxt.value = codeCifra
 
-        } else {
+            /*cifra*/
+
+        } else if (cifra.checked) {
 
             var codeCifra = '';
-    
-            for (var i = 0; i < stringSplit.length; i++) {
-                if (stringSplit[i] == ' ') {
-                    codeCifra += ' ';
-                } else if (verificacao.test(stringSplit[i]) == true) {
-                    codeCifra += stringSplit[i];
-                } else if (stringSplit[i] == stringSplit[i].toLowerCase()) {
-                    var char = stringSplit[i].toUpperCase().charCodeAt(0);
-                    var conversao = ((char - 65 - parseInt(valorIncremento.value)) % 26 + 65);
-                    codeCifra += String.fromCharCode(conversao).toLowerCase();
-    
-                } else {
-                    var char = stringSplit[i].charCodeAt(0);
-                    var conversao = ((char - 65 - parseInt(valorIncremento.value)) % 26 + 65);;
-                    codeCifra += String.fromCharCode(conversao);
-                }
-            }
-            saidaTxt.value = codeCifra
-    
-    } 
 
+            if (code.checked) {
+
+                for (var i = 0; i < stringSplit.length; i++) {
+                    if (stringSplit[i] == ' ') {
+                        codeCifra += ' ';
+                    } else if (verificacao.test(stringSplit[i]) == true) {
+                        codeCifra += stringSplit[i];
+                    } else if (stringSplit[i] == stringSplit[i].toLowerCase()) {
+                        var char = stringSplit[i].toUpperCase().charCodeAt(0);
+                        var conversao = ((char - 65 + parseInt(valorIncremento.value)) % 26 + 65);
+                        codeCifra += String.fromCharCode(conversao).toLowerCase();
+
+                    } else {
+                        var char = stringSplit[i].charCodeAt(0);
+                        var conversao = ((char - 65 + parseInt(valorIncremento.value)) % 26 + 65);;
+                        codeCifra += String.fromCharCode(conversao);
+                    }
+                }
+                saidaTxt.value = codeCifra
+
+            } else {
+
+                var codeCifra = '';
+
+                for (var i = 0; i < stringSplit.length; i++) {
+                    if (stringSplit[i] == ' ') {
+                        codeCifra += ' ';
+                    } else if (verificacao.test(stringSplit[i]) == true) {
+                        codeCifra += stringSplit[i];
+                    } else if (stringSplit[i] == stringSplit[i].toLowerCase()) {
+                        var char = stringSplit[i].toUpperCase().charCodeAt(0);
+                        var conversao = ((char - 65 - parseInt(valorIncremento.value)) % 26 + 65);
+                        codeCifra += String.fromCharCode(conversao).toLowerCase();
+
+                    } else {
+                        var char = stringSplit[i].charCodeAt(0);
+                        var conversao = ((char - 65 - parseInt(valorIncremento.value)) % 26 + 65);;
+                        codeCifra += String.fromCharCode(conversao);
+                    }
+                }
+                saidaTxt.value = codeCifra
+
+            }
+
+        }
+    } else {
+        alert("Hm... Parece que você não inseriu o texto a ser codificado/decodificado. Por favor, insira o texto no local indicado.")
     }
-} else {
-    alert("Hm... Parece que você não inseriu o texto a ser codificado/decodificado. Por favor, insira o texto no local indicado.")
-}
 
 }
 
@@ -149,10 +149,10 @@ function codeOrDecode() {
 var mostrarInfo = document.getElementById('sobreoprojeto');
 var modal = document.getElementById('modal');
 
-mostrarInfo.addEventListener('click', function(){
+mostrarInfo.addEventListener('click', function () {
 
 
-    if(modal.style.display = "none"){
+    if (modal.style.display = "none") {
         modal.style.display = "flex";
     }
 
@@ -160,9 +160,9 @@ mostrarInfo.addEventListener('click', function(){
 
 var fecharInfo = document.getElementById('botaofechar');
 
-fecharInfo.addEventListener('click', function (){
+fecharInfo.addEventListener('click', function () {
 
-    if(modal.style.display = "flex"){
+    if (modal.style.display = "flex") {
         modal.style.display = "none";
     }
 
