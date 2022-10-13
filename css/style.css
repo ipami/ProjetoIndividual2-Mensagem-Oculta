@@ -213,6 +213,7 @@ footer p {
     padding: 10px 40px;
     display: inline-block;
     border: solid 5px black;
+    background-color: #7bc74b;
     border-radius: 20px;
     box-shadow: 2px 2px 5px black;
     margin-bottom: 20px;
