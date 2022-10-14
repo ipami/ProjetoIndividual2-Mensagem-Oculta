@@ -16,7 +16,7 @@ header {
 }
 
 header img {
-    margin-top: 60px;
+    margin: 30px 0;
     width: 30%;
 }
 
@@ -117,22 +117,20 @@ label, .container p {
 }
 
 .botao {
-    font-size: 18px;
-    font-weight: 900;
-    background: #7bc74b;
-    border: 0;
+    font-size: 20px;
     margin-bottom: 20px;
-    margin-top: 20px;
-    color: #000000;
-    padding: 10px 20px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+    padding: 10px 15px;
+    background-color: #7bc74b;
+    border: solid 5px #ea6238;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px black;
     cursor: pointer;
 }
 
 .botao:hover {
-    background: #ea6238;
-    color: #ffffff;
+    background-color: #ea6238;
+    border-color: #7bc74b;
     box-shadow: insert 2px 2px 2px rgba(0, 0, 0, 0.2);
     text-shadow: none;
     -webkit-transition: 1s;
@@ -231,6 +229,9 @@ footer p {
     text-decoration: underline;
 }
 
+#botaofechar{
+    margin-top: 40px;
+}
 
 
 @media only screen and (max-width: 800px) {
@@ -296,6 +297,13 @@ footer p {
         width: 80%;
         margin: 10px 0;
     }
+
+    .modal h2{
+        font-size: 25px;
+    }
+
+    .modal p {
+        font-size: 20px;
 
 
 
