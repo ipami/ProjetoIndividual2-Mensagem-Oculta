@@ -62,19 +62,18 @@ function transcreverTxt() {
 
 var codeBase64;
 var decodeBase64;
-
-var decodeCifra;
 var valorIncremento = document.getElementById('incremento1');
 
 
 function codeOrDecode() {
 
     let entrada = txtEntrada.value
-    let stringSplit = entrada.split("")
+    let textCode = entrada.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+    let stringSplit = textCode.split("")
     const verificacao = /\W|_/;
 
 
-    if (entrada != '') {
+    if (textCode != '') {
         /*base 64 */
 
         if (base64.checked) {
@@ -124,11 +123,17 @@ function codeOrDecode() {
                     } else if (stringSplit[i] == stringSplit[i].toLowerCase()) {
                         var char = stringSplit[i].toUpperCase().charCodeAt(0);
                         var conversao = ((char - 65 - parseInt(valorIncremento.value)) % 26 + 65);
+                        if(conversao < 65){ 
+                            conversao = (conversao - 65) + 91
+                        }
                         codeCifra += String.fromCharCode(conversao).toLowerCase();
 
                     } else {
                         var char = stringSplit[i].charCodeAt(0);
-                        var conversao = ((char - 65 - parseInt(valorIncremento.value)) % 26 + 65);;
+                        var conversao = ((char - 65 - parseInt(valorIncremento.value)) % 26 + 65);
+                        if(conversao < 65){ 
+                            conversao = (conversao - 65) + 91
+                        }
                         codeCifra += String.fromCharCode(conversao);
                     }
                 }

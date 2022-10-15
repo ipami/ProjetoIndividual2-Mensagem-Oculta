@@ -95,6 +95,7 @@ label, .container p {
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
     width: 83%;
     height: 300px;
+    resize: none;
 }
 
 #incremento1 {

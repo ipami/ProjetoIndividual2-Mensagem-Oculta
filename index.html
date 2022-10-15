@@ -47,12 +47,13 @@
             <input type="radio" id="decodificar" name="codidecodi" value="decodificar" onclick="alteraBotao ()">
             <label for="decodificar" class="radio">Decodificar</label>
 
-            <span class="titulo"> Mensagem codificada/decodificada: </span>
-            <textarea id="txtcodificado"></textarea>
-
             <div class="pbotoes">
                 <button class="botao" id="botaocod" onclick="codeOrDecode ()">CODIFICAR MENSAGEM!</button>
                 <button class="botao transc" id="botaotransc" onclick="transcreverTxt ()">TRANSCREVER!</button>
+
+            <span class="titulo"> Mensagem codificada/decodificada: </span>
+            <textarea id="txtcodificado" readonly></textarea>
+    
             </div>
 
         </div>
