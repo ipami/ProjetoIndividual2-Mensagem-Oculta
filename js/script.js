@@ -91,9 +91,7 @@ function codeOrDecode() {
             if (code.checked) {
 
                 for (let i = 0; i < stringSplit.length; i++) {
-                    if (stringSplit[i] == ' ') {
-                        codeCifra += ' ';
-                    } else if (verificacao.test(stringSplit[i]) == true) {
+                    if (stringSplit[i] == ' ' || verificacao.test(stringSplit[i]) == true ) {
                         codeCifra += stringSplit[i];
                     } else if (stringSplit[i] == stringSplit[i].toLowerCase()) {
                         let char = stringSplit[i].toUpperCase().charCodeAt(0);
@@ -123,9 +121,7 @@ function codeOrDecode() {
                 let codeCifra = '';
 
                 for (let i = 0; i < stringSplit.length; i++) {
-                    if (stringSplit[i] == ' ') {
-                        codeCifra += ' ';
-                    } else if (verificacao.test(stringSplit[i]) == true) {
+                    if (stringSplit[i] == ' ' || verificacao.test(stringSplit[i]) == true ) {
                         codeCifra += stringSplit[i];
                     } else if (stringSplit[i] == stringSplit[i].toLowerCase()) {
                         let char = stringSplit[i].toUpperCase().charCodeAt(0);
