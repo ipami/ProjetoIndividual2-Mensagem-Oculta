@@ -31,7 +31,7 @@ A estética do projeto foi inspirada/baseada no design da van Máquina do Misté
 <img src="https://cdn.discordapp.com/attachments/283392827721908225/1029951048850346005/527c169edd6bd5155a9ca32d09e3ac61987cede1_hq.gif" width = 700px align="center">
 <br>
 <br>
-<img src="https://cdn.discordapp.com/attachments/283392827721908225/1029949648221245500/screencapture-127-0-0-1-5500-index-html-2022-10-12-23_51_56.png" width=700px align="center">
+<img src="https://cdn.discordapp.com/attachments/283392827721908225/1031761230941143050/unknown.png" width=700px align="center">
 </div>
 <br>
 <br>
