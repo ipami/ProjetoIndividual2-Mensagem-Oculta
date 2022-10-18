@@ -1,8 +1,8 @@
 /* Botão de codificar/decodificar*/
 
-var code = document.getElementById('codificar');
-var decode = document.getElementById('decodificar');
-var bCode = document.getElementById('botaocod');
+let code = document.getElementById('codificar');
+let decode = document.getElementById('decodificar');
+let bCode = document.getElementById('botaocod');
 
 function alteraBotao() {
     if (code.checked) {
@@ -17,12 +17,11 @@ function alteraBotao() {
 
 /* Esconder/revelar o incremento */
 
-var cifra = document.getElementById('cifra');
-var base64 = document.getElementById('base64');
+let cifra = document.getElementById('cifra');
+let base64 = document.getElementById('base64');
+let divIncremento = document.getElementById('incremento');
 
 cifra.addEventListener('click', function () {
-
-    var divIncremento = document.getElementById('incremento');
 
     if (divIncremento.style.display == "none") {
         divIncremento.style.display = "block";
@@ -34,7 +33,6 @@ cifra.addEventListener('click', function () {
 
 base64.addEventListener('click', function () {
 
-    var divIncremento = document.getElementById('incremento');
 
     if (divIncremento.style.display == "block") {
         divIncremento.style.display = "none";
@@ -46,9 +44,8 @@ base64.addEventListener('click', function () {
 
 /* Botão transcrever - torna o valor do resultado o valor da caixa de entrada*/
 
-// var transcrever = document.getElementById('botaotransc');
-var txtEntrada = document.getElementById('entradatxt');
-var saidaTxt = document.getElementById('txtcodificado');
+let txtEntrada = document.getElementById('entradatxt');
+let saidaTxt = document.getElementById('txtcodificado');
 
 function transcreverTxt() {
 
@@ -60,9 +57,9 @@ function transcreverTxt() {
 
 /* Base 64 */
 
-var codeBase64;
-var decodeBase64;
-var valorIncremento = document.getElementById('incremento1');
+let codeBase64 = '';
+let decodeBase64 = '';
+let valorIncremento = document.getElementById('incremento1');
 
 
 function codeOrDecode() {
@@ -89,23 +86,33 @@ function codeOrDecode() {
 
         } else if (cifra.checked) {
 
-            var codeCifra = '';
+            let codeCifra = '';
 
             if (code.checked) {
 
-                for (var i = 0; i < stringSplit.length; i++) {
+                for (let i = 0; i < stringSplit.length; i++) {
                     if (stringSplit[i] == ' ') {
                         codeCifra += ' ';
                     } else if (verificacao.test(stringSplit[i]) == true) {
                         codeCifra += stringSplit[i];
                     } else if (stringSplit[i] == stringSplit[i].toLowerCase()) {
-                        var char = stringSplit[i].toUpperCase().charCodeAt(0);
-                        var conversao = ((char - 65 + parseInt(valorIncremento.value)) % 26 + 65);
+                        let char = stringSplit[i].toUpperCase().charCodeAt(0);
+                        let conversao = ((char - 65 + parseInt(valorIncremento.value)) % 26 + 65);
+                        if (conversao < 65) {
+                            while (conversao < 65) {
+                                conversao = (conversao - 65) + 91
+                            }
+                        }
                         codeCifra += String.fromCharCode(conversao).toLowerCase();
 
                     } else {
-                        var char = stringSplit[i].charCodeAt(0);
-                        var conversao = ((char - 65 + parseInt(valorIncremento.value)) % 26 + 65);;
+                        let char = stringSplit[i].charCodeAt(0);
+                        let conversao = ((char - 65 + parseInt(valorIncremento.value)) % 26 + 65);;
+                        if (conversao < 65) {
+                            while (conversao < 65) {
+                                conversao = (conversao - 65) + 91
+                            }
+                        }
                         codeCifra += String.fromCharCode(conversao);
                     }
                 }
@@ -113,26 +120,30 @@ function codeOrDecode() {
 
             } else {
 
-                var codeCifra = '';
+                let codeCifra = '';
 
-                for (var i = 0; i < stringSplit.length; i++) {
+                for (let i = 0; i < stringSplit.length; i++) {
                     if (stringSplit[i] == ' ') {
                         codeCifra += ' ';
                     } else if (verificacao.test(stringSplit[i]) == true) {
                         codeCifra += stringSplit[i];
                     } else if (stringSplit[i] == stringSplit[i].toLowerCase()) {
-                        var char = stringSplit[i].toUpperCase().charCodeAt(0);
-                        var conversao = ((char - 65 - parseInt(valorIncremento.value)) % 26 + 65);
-                        if(conversao < 65){ 
-                            conversao = (conversao - 65) + 91
+                        let char = stringSplit[i].toUpperCase().charCodeAt(0);
+                        let conversao = ((char - 65 - parseInt(valorIncremento.value)) % 26 + 65);
+                        if (conversao < 65) {
+                            while (conversao < 65) {
+                                conversao = (conversao - 65) + 91
+                            }
                         }
                         codeCifra += String.fromCharCode(conversao).toLowerCase();
 
                     } else {
-                        var char = stringSplit[i].charCodeAt(0);
-                        var conversao = ((char - 65 - parseInt(valorIncremento.value)) % 26 + 65);
-                        if(conversao < 65){ 
-                            conversao = (conversao - 65) + 91
+                        let char = stringSplit[i].charCodeAt(0);
+                        let conversao = ((char - 65 - parseInt(valorIncremento.value)) % 26 + 65);
+                        if (conversao < 65) {
+                            while (conversao < 65) {
+                                conversao = (conversao - 65) + 91
+                            }
                         }
                         codeCifra += String.fromCharCode(conversao);
                     }
@@ -151,8 +162,8 @@ function codeOrDecode() {
 
 /*modal com informações sobre o projeto*/
 
-var mostrarInfo = document.getElementById('sobreoprojeto');
-var modal = document.getElementById('modal');
+let mostrarInfo = document.getElementById('sobreoprojeto');
+let modal = document.getElementById('modal');
 
 mostrarInfo.addEventListener('click', function () {
 
@@ -163,7 +174,7 @@ mostrarInfo.addEventListener('click', function () {
 
 })
 
-var fecharInfo = document.getElementById('botaofechar');
+let fecharInfo = document.getElementById('botaofechar');
 
 fecharInfo.addEventListener('click', function () {
 
